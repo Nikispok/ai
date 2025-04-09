@@ -1,31 +1,61 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('background.jpg') no-repeat center center fixed; 
-    background-size: cover;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    overflow: hidden; 
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
+/* Фон-слайдер */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    animation: backgroundFade 20s infinite;
+}
+
+/* Чёрный полупрозрачный фильтр */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* затемнение */
+    z-index: -1;
+}
+
+/* Контейнер */
 .content {
     position: relative;
     z-index: 1;
-    color: white;
     text-align: center;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.8); 
-    border-radius: 15px; 
-    backdrop-filter: blur(5px); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-    width: 90%; 
-    max-width: 800px; 
-    overflow-y: auto; 
-    max-height: 80vh; 
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 50px auto;
+}
+
+/* Анимация смены изображений */
+@keyframes backgroundFade {
+    0%   { background-image: url('1.jpeg'); }
+    33%  { background-image: url('2.jpeg'); }
+    66%  { background-image: url('3.jpeg'); }
+    100% { background-image: url('1.jpeg'); }
 }
 
 h1 {
@@ -74,16 +104,5 @@ h1 {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
 }
 
-.background-slider {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    transition: background-image 1s ease-in-out;
-}
 
    
