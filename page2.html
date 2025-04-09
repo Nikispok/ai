@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маштабиране и първа слава</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h1>Маштабиране и първа слава</h1>
+        <div id="story-text">Загрузка...</div>
+
+        <div class="image-gallery">
+            <img src="4.jpeg" alt="Иллюстрация 1">
+              <img src="5.jpeg" alt="Иллюстрация 2">
+              <img src="6.jpeg" alt="Иллюстрация 3">
+        </div>
+    
+        <div class="buttons">
+            <a href="page3.html" class="button">Напред</a>
+            <a href="main_page.html" class="button">Главна страница</a>
+            <a href="index.htm" class="button">Назад</a>
+    
+        </div>
+    </div>
+    
+    <script>
+        fetch('story2.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('story-text').innerText = text;
+            })
+            .catch(error => {
+                document.getElementById('story-text').innerText = "Ошибка загрузки текста.";
+                console.error("Ошибка загрузки:", error);
+            });
+    </script>
+</body>
+</html>

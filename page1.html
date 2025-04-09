@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История – Часть 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    const backgrounds = ['1.jpeg', '2.jpeg', '3.jpeg']; // твои картинки
+    let index = 0;
+    const bgSlider = document.querySelector('.background-slider');
+
+    function changeBackground() {
+        bgSlider.style.backgroundImage = `url('${backgrounds[index]}')`;
+        index = (index + 1) % backgrounds.length;
+    }
+
+    // Запускаем сразу
+    changeBackground();
+    // Меняем каждые 5 секунд
+    setInterval(changeBackground, 5000);
+</script>
+<body>
+    <div class="background-slider"></div>
+    <div class="content">
+    <div class="content">
+       <h1>Идея на милион...</h1>
+       <div id="story-text">Загрузка...</div>
+        
+       <div class="image-gallery">
+                  <img src="1.jpeg" alt="Иллюстрация 1">
+                    <img src="2.jpeg" alt="Иллюстрация 2">
+                    <img src="3.jpeg" alt="Иллюстрация 3">
+              </div>
+
+        <div class="buttons">
+            <a href="page2.html" class="button">Напред</a>
+            <a href="index.html" class="button">Главна страница</a>
+          
+        </div>
+        
+    </div>
+
+    <script>
+        fetch('story1.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Сеть не в порядке');
+                }
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('story-text').innerText = text;
+            })
+            .catch(error => {
+                document.getElementById('story-text').innerText = "Ошибка загрузки текста.";
+                console.error("Ошибка загрузки:", error);
+            });
+
+    </script>
+
+
+</body>
+</html>

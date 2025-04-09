@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Укажите путь к вашему фоновому изображению */
+    background-size: cover; /* Заполняет весь экран */
+    background-position: center; /* Центрирует изображение */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: white; /* Измените цвет текста, чтобы он был виден на фоне */
+}
+
+h1 {
+    color: #fff; /* Цвет заголовка */
+}
+
+.hero {
+    display: inline-block;
+    margin: 20px;
+    position: relative; /* Для позиционирования характеристики */
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px; /* Круглая форма */
+    transition: transform 0.3s; /* Плавный переход при наведении */
+}
+
+.hero:hover img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.hero-name {
+    font-size: 20px; /* Размер шрифта для имени */
+    font-weight: bold; /* Жирный шрифт */
+    margin-top: 10px; /* Отступ сверху */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
+    font-family: 'Georgia', serif; /* Пример красивого шрифта */
+}
+
+.characteristics {
+    display: none; /* Скрываем характеристики по умолчанию */
+    position: absolute; /* Позиционируем характеристики относительно родителя */
+    bottom: -30px; /* Положение под изображением */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем текст */
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s; /* Плавный переход для появления */
+    opacity: 0; /* Скрываем текст */
+}
+
+.hero:hover .characteristics {
+    display: block; /* Показываем характеристики при наведении */
+    opacity: 1; /* Делаем текст видимым */
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.button {
+    display: block; /* Каждая кнопка на новом ряду */
+    background-color: #00BFFF; /* Неоново-синий цвет */
+    color: white;
+    border: none;
+    padding: 20px 40px; /* Увеличенные размеры кнопок */
+    margin: 10px auto; /* Центрируем кнопки */
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 24px; /* Увеличенный шрифт */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Плавный переход для анимации */
+    width: 300px; /* Ширина кнопки */
+    box-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF; /* Эффект свечения */
+}
+
+.button:hover {
+    background-color: #0080FF; /* Темнее при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+    box-shadow: 0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF; /* Увеличение свечения при наведении */
+}
+.characteristics {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute; /* Позиционирование относительно родителя */
+    bottom: -30px; /* Положение под изображением */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем текст */
+    background-color: rgba(255, 255, 255, 0.95); /* Немного более непрозрачный для ясности */
+    color: #333; /* Темный текст для читаемости */
+    padding: 15px; /* Увеличенный отступ для более просторного ощущения */
+    border-radius: 8px; /* Закругленные углы для современного вида */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для глубины */
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease; /* Плавное появление и легкий эффект масштабирования */
+    opacity: 0; /* Изначально скрыто */
+    font-family: 'Arial', sans-serif; /* Профессиональный выбор шрифта */
+    font-size: 16px; /* Настроенный размер шрифта для лучшей читаемости */
+}
+
+.hero:hover .characteristics {
+    display: block; /* Показываем при наведении */
+    opacity: 1; /* Плавное появление */
+    transform: translateX(-50%) translateY(5px); /* Легкое движение вверх при наведении */
+}
+
+.footer-text {
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 20px; /* Отступ от нижнего края */
+    right: 20px; /* Отступ от правого края */
+    font-family: 'Georgia', serif; /* Красивый шрифт */
+    font-size: 18px; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый цвет */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Тень для текста */
+    z-index: 1000; /* Убедитесь, что текст поверх других элементов */
+}
