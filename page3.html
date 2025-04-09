@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>История</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
 </head>
+<script>
+    const backgrounds = ['7.jpeg', '8.jpeg', '9.jpeg']; // твои картинки
+    let index = 0;
+    const bgSlider = document.querySelector('.background-slider');
+
+    function changeBackground() {
+        bgSlider.style.backgroundImage = `url('${backgrounds[index]}')`;
+        index = (index + 1) % backgrounds.length;
+    }
+
+    // Запускаем сразу
+    changeBackground();
+    // Меняем каждые 5 секунд
+    setInterval(changeBackground, 5000);
+</script>
 <body>
+    <div class="background-slider"></div>
+    <div class="content">
     <div class="overlay"></div>
 
     <div class="content">
         <h1>Това е конец?</h1>
         <div id="story-text">Загрузка...</div>
 
-        <div class="image-gallery">
-            <img src="7.jpeg" alt="Иллюстрация 1">
-              <img src="8.jpeg" alt="Иллюстрация 2">
-              <img src="9.jpeg" alt="Иллюстрация 3">
-        </div>
+       
     
         <div class="buttons">
             <a href="index.html" class="button">Главна страница</a>

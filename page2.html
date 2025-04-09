@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Маштабиране и първа слава</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
-<body>
-    <div class="overlay"></div>
+<script>
+    const backgrounds = ['4.jpeg', '5.jpeg', '6.jpeg']; // твои картинки
+    let index = 0;
+    const bgSlider = document.querySelector('.background-slider');
 
+    function changeBackground() {
+        bgSlider.style.backgroundImage = `url('${backgrounds[index]}')`;
+        index = (index + 1) % backgrounds.length;
+    }
+
+    // Запускаем сразу
+    changeBackground();
+    // Меняем каждые 5 секунд
+    setInterval(changeBackground, 5000);
+</script>
+<body>
+    
+    <div class="background-slider"></div>
     <div class="content">
         <h1>Маштабиране и първа слава</h1>
         <div id="story-text">Загрузка...</div>
 
-        <div class="image-gallery">
-            <img src="4.jpeg" alt="Иллюстрация 1">
-              <img src="5.jpeg" alt="Иллюстрация 2">
-              <img src="6.jpeg" alt="Иллюстрация 3">
-        </div>
+        
     
         <div class="buttons">
             <a href="page3.html" class="button">Напред</a>
